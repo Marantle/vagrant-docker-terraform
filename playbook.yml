@@ -1,0 +1,11 @@
+---
+- hosts: all
+  vars:
+    pip_install_packages:
+      - name: docker
+  roles:
+    - geerlingguy.pip
+    - geerlingguy.docker
+    - { role: migibert.terraform,  terraform_version: 0.11.13 }
+  become: true
+
